@@ -1,0 +1,30 @@
+plugins {
+  id 'java'
+}
+
+group 'com.prigozhaev.example'
+version '1.0.0'
+
+java {
+  sourceCompatibility = "1.8"
+  targetCompatibility = "1.8"
+}
+
+repositories {
+  mavenCentral()
+}
+
+dependencies {
+  testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
+  testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
+
+  // Project Lombok
+  compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.22'
+
+  // Jackson Core
+  implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.9.9'
+}
+
+test {
+  useJUnitPlatform()
+}
